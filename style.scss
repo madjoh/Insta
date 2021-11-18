@@ -1,0 +1,82 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+
+body {
+  background-color: #e3e3e3;
+}
+
+a {
+  color: #6a6068;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (min-width: 1020px) {
+    max-width: 1300px;
+    margin: auto;
+  }
+
+  nav {
+    margin-bottom: 1rem;
+    width: 100%;
+
+    & .material-icons {
+      font-size: 32px;
+    }
+
+    @media (min-width: 768px) {
+      margin-left: 1%;
+    }
+  }
+
+  .card {
+    background-color: white;
+    position: relative; //Sätter denna till relative så att alla underliggande element med position absolute ligger relativt till detta element.
+    margin-bottom: 1rem;
+    flex: 0 0 100%; 
+
+    @media (min-width: 768px) {
+      flex: 0 0 48%; // Sätter flex så den får två bilder i bredd på surfplatteläge.
+      margin: 1%;
+    }
+    @media (min-width: 1020px) {
+      flex: 0 0 31.3333%; //Sätter flex så den får tre bilder i bredd på desktop.
+      margin: 1%;
+    }
+  }
+
+  .profilepic {
+    position: absolute; //Sätter denna som absolute så profilbilden kan ligga ovanpå cardet.
+    top: 10px;
+    left: 10px;
+  }
+
+  .card_content {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+
+    &__left-group > a {
+      margin-right: 2rem;
+    }
+
+    & .material-icons {
+      vertical-align: middle;
+      font-size: 21px;
+    }
+  }
+}
